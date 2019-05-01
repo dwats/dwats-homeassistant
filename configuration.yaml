@@ -9,12 +9,11 @@ homeassistant:
 
 lovelace:
   mode: yaml
-  
+
 frontend:
   themes: !include themes.yaml
 
 default_config:
-introduction:
 
 automation: !include automations.yaml
 group: !include groups.yaml
