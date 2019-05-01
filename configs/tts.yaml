@@ -1,2 +1,2 @@
 # Text to speech
-  - platform: google
+  - platform: google_translate
