@@ -1,0 +1,11 @@
+# Octoprint integration
+  - host: !secret octopi_host
+    api_key: !secret octopi_api
+    name: Creality Ender 3
+    bed: true
+    number_of_tools: 1
+    sensors:
+      monitored_conditions:
+        - Current State
+        - Job Percentage
+        - Temperatures

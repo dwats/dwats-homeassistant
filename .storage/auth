@@ -1,0 +1,69 @@
+{
+    "data": {
+        "credentials": [
+            {
+                "auth_provider_id": null,
+                "auth_provider_type": "homeassistant",
+                "data": {
+                    "username": "eric"
+                },
+                "id": "2bf95bb2087547eb8140cd392b4b862f",
+                "user_id": "d2e10abfd0404080be7c1569c7c3bd88"
+            }
+        ],
+        "groups": [
+            {
+                "id": "system-admin",
+                "name": "Administrators"
+            },
+            {
+                "id": "system-users",
+                "name": "Users"
+            },
+            {
+                "id": "system-read-only",
+                "name": "Read Only"
+            }
+        ],
+        "refresh_tokens": [
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "http://192.168.1.102:8123/",
+                "client_name": null,
+                "created_at": "2019-04-30T04:12:14.631272+00:00",
+                "id": "5c03a1fb08ad456da40524ca8b304554",
+                "jwt_key": "33a707429734cc770298d1dbb4534c04cbb4c98af936d5e957aaed11baf9c8319f662951710c6106293a13405d387c2bbfd4bd90797a051d3f5e0ca437b746ef",
+                "last_used_at": "2019-05-01T00:29:17.303722+00:00",
+                "last_used_ip": "192.168.1.132",
+                "token": "dc63eb29ba917a81ceea0e0e7ad8cdfb2cf24e0d2807aee8508b68069c73c8bcbb70a8f83b3665ddb8bc8de26499ac64146458eec3a670b6b34e7b14e6d441a7",
+                "token_type": "normal",
+                "user_id": "d2e10abfd0404080be7c1569c7c3bd88"
+            }
+        ],
+        "users": [
+            {
+                "group_ids": [
+                    "system-admin"
+                ],
+                "id": "d2e10abfd0404080be7c1569c7c3bd88",
+                "is_active": true,
+                "is_owner": true,
+                "name": "eric",
+                "system_generated": false
+            },
+            {
+                "group_ids": [
+                    "system-admin"
+                ],
+                "id": "4490d0f3f255425990953926a1b65c94",
+                "is_active": true,
+                "is_owner": false,
+                "name": "Home Assistant Cloud",
+                "system_generated": true
+            }
+        ]
+    },
+    "key": "auth",
+    "version": 1
+}

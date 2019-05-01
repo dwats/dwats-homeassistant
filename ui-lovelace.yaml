@@ -1,0 +1,259 @@
+title: Home
+views:
+  - title: Home
+    icon: mdi:home-modern
+    panel: true
+    cards: 
+      
+      - type: horizontal-stack
+        cards: 
+        - type: vertical-stack
+          cards: 
+              
+          - type: light
+            name: Livingroom Lamp
+            entity: light.tr_livingroom_lamp
+            
+          - type: light
+            name: Bedside Lamp
+            entity: light.tr_bedside_lamp
+            
+        # Switches
+        - type: entities
+          title: Switches
+          entities: 
+            - entity: switch.tr_kitchen_switch
+              icon: mdi:lightbulb
+              secondary_info: last-changed
+            - entity: switch.tr_entryway_switch
+              icon: mdi:lightbulb
+              secondary_info: last-changed
+              
+        # Presense 
+        - type: entities
+          title: Family
+          show_header_toggle: false
+          entities: 
+            - entity: person.eric
+              secondary_info: last-changed
+            - entity: person.heath
+              secondary_info: last-changed
+            
+#      - type: gauge
+#        id: cpu-gauge
+#        entity: sensor.processor_use
+#        title: CPU
+#        severity:
+#          green: 0
+#          yellow: 50
+#          red: 85
+  
+  # Roku
+  - title: Roku
+    icon: mdi:remote
+    cards: 
+      - type: vertical-stack
+        cards: 
+        # Row 1
+        - type: horizontal-stack
+          cards: 
+            # back
+            - type: entity-button
+              entity: remote.55_tcl_roku_tv
+              icon: mdi:arrow-left
+              name: Back
+              tap_action:
+                action: call-service
+                service: remote.send_command
+                service_data: 
+                  command: back
+          # options/info
+            - type: entity-button
+              entity: remote.55_tcl_roku_tv
+              icon: mdi:asterisk
+              name: Info
+              tap_action:
+                action: call-service
+                service: remote.send_command
+                service_data: 
+                  command: info
+          # home
+            - type: entity-button
+              entity: remote.55_tcl_roku_tv
+              icon: mdi:home
+              name: Info
+              tap_action:
+                action: call-service
+                service: remote.send_command
+                service_data: 
+                  command: home
+        
+        # Row 2
+        - type: horizontal-stack
+          cards:
+            # blank
+            - type: markdown
+              content: > 
+                ![]()
+                
+                ![]()
+                
+                ![]()
+            # up 
+            - type: entity-button
+              entity: remote.55_tcl_roku_tv
+              icon: mdi:chevron-up-circle
+              name: Up
+              tap_action:
+                action: call-service
+                service: remote.send_command
+                service_data: 
+                  command: up
+            # blank
+            - type: markdown
+              content: > 
+                ![]()
+                
+                ![]()
+                
+                ![]()
+        
+        # Row 3
+        - type: horizontal-stack
+          cards: 
+          # left
+            - type: entity-button
+              entity: remote.55_tcl_roku_tv
+              icon: mdi:chevron-left-circle
+              name: Left
+              tap_action:
+                action: call-service
+                service: remote.send_command
+                service_data: 
+                  command: left
+          # select
+            - type: entity-button
+              entity: remote.55_tcl_roku_tv
+              icon: mdi:circle
+              name: Select
+              tap_action:
+                action: call-service
+                service: remote.send_command
+                service_data: 
+                  command: select
+          # right
+            - type: entity-button
+              entity: remote.55_tcl_roku_tv
+              icon: mdi:chevron-right-circle
+              name: Right
+              tap_action:
+                action: call-service
+                service: remote.send_command
+                service_data: 
+                  command: right      
+                  
+        # Row 4
+        - type: horizontal-stack
+          cards:
+            # blank
+            - type: markdown
+              content: > 
+                ![]()
+                
+                ![]()
+                
+                ![]()
+                
+            # down
+            - type: entity-button
+              entity: remote.55_tcl_roku_tv
+              icon: mdi:chevron-down-circle
+              name: Down
+              tap_action:
+                action: call-service
+                service: remote.send_command
+                service_data: 
+                  command: down
+            # blank
+            - type: markdown
+              content: > 
+                ![]()
+                
+                ![]()
+                
+                ![]()
+                
+        # Row 5
+        - type: horizontal-stack
+          cards: 
+          # rewind
+            - type: entity-button
+              entity: remote.55_tcl_roku_tv
+              icon: mdi:rewind
+              name: Rewind
+              tap_action:
+                action: call-service
+                service: remote.send_command
+                service_data: 
+                  command: reverse
+          # play/pause
+            - type: entity-button
+              entity: remote.55_tcl_roku_tv
+              icon: mdi:play-pause
+              name: Play/Pause
+              tap_action:
+                action: call-service
+                service: remote.send_command
+                service_data: 
+                  command: play 
+          # fastforward
+            - type: entity-button
+              entity: remote.55_tcl_roku_tv
+              icon: mdi:fast-forward
+              name: Fast Forward
+              tap_action:
+                action: call-service
+                service: remote.send_command
+                service_data: 
+                  command: forward   
+          
+    
+  # 3d Printer
+  - title: OctoPrint
+    icon: mdi:printer-3d
+    cards:
+    
+      # Printer Controls/Camera
+      - type: picture-glance
+        title: Creality Ender 3
+        camera_image: camera.ender_3
+        entities: 
+          - entity: binary_sensor.creality_ender_3_printing
+            title: State
+          - entity: sensor.creality_ender_3_job_percentage
+            name: Progress
+        
+      - type: horizontal-stack
+        cards: 
+       
+          # Hotend Temperature
+          - type: gauge
+            name: Hotend
+            entity: sensor.creality_ender_3_actual_tool0_temp
+            min: 20
+            max: 300
+            severity:
+              green: 185
+              yellow: 250
+              red: 275
+              
+          # Bed Temperature
+          - type: gauge
+            name: Bed
+            entity: sensor.creality_ender_3_actual_bed_temp
+            min: 20
+            max: 110
+            severity:
+              green: 50
+              yellow: 75
+              red: 95

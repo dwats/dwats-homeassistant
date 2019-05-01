@@ -1,0 +1,44 @@
+{
+    "data": {
+        "entities": [
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "person.eric",
+                "name": null,
+                "platform": "person",
+                "unique_id": "c92919813c07494a9ac79adbeeddca15"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "remote.55_tcl_roku_tv",
+                "name": null,
+                "platform": "roku",
+                "unique_id": "YN00UY050190"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "media_player.55_tcl_roku_tv",
+                "name": null,
+                "platform": "roku",
+                "unique_id": "YN00UY050190"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.remote_ui",
+                "name": null,
+                "platform": "cloud",
+                "unique_id": "cloud-remote-ui-connectivity"
+            }
+        ]
+    },
+    "key": "core.entity_registry",
+    "version": 1
+}

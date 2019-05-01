@@ -1,0 +1,9 @@
+# Turn off lights when everybody leaves the house
+  - alias: 'Rule 2 - Away Mode'
+    trigger:
+      platform: state
+      entity_id: group.all_devices
+      to: 'not_home'
+    action:
+      service: light.turn_off
+      entity_id: group.all_lights

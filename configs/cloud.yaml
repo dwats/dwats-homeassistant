@@ -1,0 +1,33 @@
+# The Cloud
+  google_actions:
+    filter:
+      include_domains:
+        - zha
+        - light
+        - switch
+    
+    entity_config:
+      switch.tr_kitchen_switch:
+        name: Kitchen Counter Light Switch
+        aliases:
+          - counter light
+          - kitchen light
+        room: kitchen
+      switch.tr_entryway_switch:
+        name: Entryway Light Switch
+        aliases:
+          - entryway light
+          - door light
+        room: entryway
+      light.tr_livingroom_lamp:
+        name: Livingroom Lamp
+        aliases:
+          - couch lamp
+          - livingroom lamp
+        room: livingroom
+      light.tr_bedside_lamp:
+        name: Bedside Lamp
+        aliases:
+          - bedroom lamp
+          - bedroom light
+        room: master bedroom

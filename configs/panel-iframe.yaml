@@ -1,0 +1,5 @@
+# HAss.io Sidebar Nav
+  configurator:
+    title: Configurator
+    icon: mdi:wrench
+    url: http://hassio.local:3218

@@ -1,0 +1,21 @@
+{
+    "data": {
+        "entries": [
+            {
+                "connection_class": "local_push",
+                "data": {
+                    "radio_type": "ezsp",
+                    "usb_path": "/dev/ttyUSB1"
+                },
+                "domain": "zha",
+                "entry_id": "5ebc16acd3494ebe8f387414c7497d1f",
+                "options": {},
+                "source": "import",
+                "title": "/dev/ttyUSB1",
+                "version": 1
+            }
+        ]
+    },
+    "key": "core.config_entries",
+    "version": 1
+}
