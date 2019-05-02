@@ -307,23 +307,23 @@ views:
         cards:
           - type: sensor
             name: Elapsed
-            entity: sensor.octoprint_time_elapsed
+            entity: sensor.ender3_time_elapsed
             graph: none
 
           - type: sensor
             name: Remaining
-            entity: sensor.octoprint_time_remaining
+            entity: sensor.ender3_time_remaining
             graph: none
 
       - type: glance
         show_header_toggle: false
         column_width: calc(100% / 3)
         entities:
-          - entity: binary_sensor.octoprint_printing
+          - entity: binary_sensor.ender3_printing
             name: Printing Status
             icon: mdi:printer-wireless
-          - entity: binary_sensor.octoprint_printing_error
+          - entity: binary_sensor.ender3_printing_error
             name:  Error State
             icon: mdi:printer-alert
-          - entity: sensor.octoprint_current_state
+          - entity: sensor.ender3_current_state
             name: Current Status
