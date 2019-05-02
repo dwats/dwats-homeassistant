@@ -1,4 +1,7 @@
 title: Home
+resources:
+  - url: /local/bignumber-card.js?v=1
+    type: js
 views:
   - title: Home
     icon: mdi:home-modern
