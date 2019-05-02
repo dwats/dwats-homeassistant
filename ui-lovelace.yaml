@@ -233,9 +233,11 @@ views:
     cards:
 
       # Printer Controls/Camera
-      - type: picture-glance
-        title: Creality Ender 3
-        camera_image: camera.ender_3
+      - type: picture-entity
+        name: Ender 3 Cam
+        entity: camera.ender_3
+        show_state: false
+        tap_action: more-info
 
       - type: horizontal-stack
         cards:
