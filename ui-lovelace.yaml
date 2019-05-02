@@ -1,6 +1,6 @@
 title: Home
 resources:
-  - url: /www/bignumber-card.js?v=1
+  - url: /local/bignumber-card.js?v=1
     type: js
 views:
   - title: Home
@@ -233,99 +233,99 @@ views:
     cards:
 
       # Printer Controls/Camera
-      - type: picture-entity
-        name: Ender 3 Cam
-        entity: camera.ender_3
-        show_state: false
-        tap_action: more-info
-
-      - type: horizontal-stack
+      - type: vertical-stack
         cards:
-          - type: gauge
-            name: Bed Temp
-            entity: sensor.ender3_actual_bed_temp
-            unit_of_measurement: °C
-            min: 0
-            max: 150
-            severity:
-              red: 120
-              amber: 0
-              green: 60
-            #scale: '50px'
-          - type: gauge
-            name: Hot End Temp
-            entity: sensor.ender3_actual_tool0_temp
-            unit_of_measurement: °C
-            min: 0
-            max: 260
-            severity:
-              red: 225
-              amber: 0
-              green: 200
-            #scale: '50px'
+        - type: picture-entity
+          name: Ender 3 Cam
+          entity: camera.ender_3
+          show_state: false
+          tap_action: more-info
+        - type: custom:bignumber-card
+          title: Current Job Completion Status
+          entity: sensor.ender3_job_percentage
+          scale: 30px
+          from: left
+          min: 0
+          max: 100
+          severity:
+            - value: 20
+              style: 'var(--label-badge-red)'
+            - value: 40
+              style: 'var(--label-badge-yellow)'
+            - value: 70
+              style: 'var(--label-badge-green)'
+        - type: glance
+          show_header_toggle: false
+          column_width: calc(100% / 3)
+          entities:
+            - entity: binary_sensor.ender3_printing
+              name: Printing Status
+              icon: mdi:printer-wireless
+            - entity: binary_sensor.ender3_printing_error
+              name:  Error State
+              icon: mdi:printer-alert
+            - entity: sensor.ender3_current_state
+              name: Current Status
 
-      - type: horizontal-stack
+      - type: vertical-stack
         cards:
-          - type: gauge
-            name: Bed Target
-            entity: sensor.ender3_actual_bed_temp
-            unit_of_measurement: °C
-            min: 0
-            max: 150
-            severity:
-              red: 120
-              amber: 0
-              green: 59
-            #scale: '50px'
+        - type: horizontal-stack
+          cards:
+            - type: gauge
+              name: Bed Temp
+              entity: sensor.ender3_actual_bed_temp
+              unit_of_measurement: °C
+              min: 0
+              max: 150
+              severity:
+                red: 120
+                amber: 0
+                green: 60
+              #scale: '50px'
+            - type: gauge
+              name: Hot End Temp
+              entity: sensor.ender3_actual_tool0_temp
+              unit_of_measurement: °C
+              min: 0
+              max: 260
+              severity:
+                red: 225
+                amber: 0
+                green: 200
+              #scale: '50px'
+        - type: horizontal-stack
+          cards:
+            - type: gauge
+              name: Bed Target
+              entity: sensor.ender3_actual_bed_temp
+              unit_of_measurement: °C
+              min: 0
+              max: 150
+              severity:
+                red: 120
+                amber: 0
+                green: 59
+              #scale: '50px'
 
-          - type: gauge
-            name: Hot End Target
-            entity: sensor.ender3_actual_tool0_temp
-            unit_of_measurement: °C
-            min: 0
-            max: 260
-            severity:
-              red: 225
-              amber: 0
-              green: 199
-            #scale: '50px'
+            - type: gauge
+              name: Hot End Target
+              entity: sensor.ender3_actual_tool0_temp
+              unit_of_measurement: °C
+              min: 0
+              max: 260
+              severity:
+                red: 225
+                amber: 0
+                green: 199
+              #scale: '50px'
+        - type: horizontal-stack
+          cards:
+            - type: sensor
+              name: Elapsed
+              entity: sensor.ender3_time_elapsed
+              graph: none
 
-      - type: custom:bignumber-card
-        title: Current Job Completion Status
-        entity: sensor.ender3_job_percentage
-        scale: 30px
-        from: left
-        min: 0
-        max: 100
-        severity:
-          - value: 20
-            style: 'var(--label-badge-red)'
-          - value: 40
-            style: 'var(--label-badge-yellow)'
-          - value: 70
-            style: 'var(--label-badge-green)'
-
-      - type: horizontal-stack
-        cards:
-          - type: sensor
-            name: Elapsed
-            entity: sensor.ender3_time_elapsed
-            graph: none
-
-          - type: sensor
-            name: Remaining
-            entity: sensor.ender3_time_remaining
-            graph: none
-
-      - type: glance
-        show_header_toggle: false
-        column_width: calc(100% / 3)
-        entities:
-          - entity: binary_sensor.ender3_printing
-            name: Printing Status
-            icon: mdi:printer-wireless
-          - entity: binary_sensor.ender3_printing_error
-            name:  Error State
-            icon: mdi:printer-alert
-          - entity: sensor.ender3_current_state
-            name: Current Status
+            - type: sensor
+              name: Remaining
+              entity: sensor.ender3_time_remaining
+              graph: none
