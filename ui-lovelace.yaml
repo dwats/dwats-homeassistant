@@ -1,6 +1,6 @@
 title: Home
 resources:
-  - url: /www/bignumber-card.js?v=1
+  - url: www/bignumber-card.js?v=1
     type: js
 views:
   - title: Home
