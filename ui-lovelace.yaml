@@ -236,11 +236,6 @@ views:
       - type: picture-glance
         title: Creality Ender 3
         camera_image: camera.ender_3
-        entities:
-          - entity: binary_sensor.creality_ender_3_printing
-            title: State
-          - entity: sensor.creality_ender_3_job_percentage
-            name: Progress
 
       - type: horizontal-stack
         cards:
@@ -255,7 +250,6 @@ views:
               amber: 0
               green: 60
             #scale: '50px'
-
           - type: gauge
             title: Hot End Temp
             entity: sensor.hotend
@@ -293,8 +287,6 @@ views:
               amber: 0
               green: 199
             #scale: '50px'
-
-
 
       - type: custom:bignumber-card
         title: Current Job Completion Status
