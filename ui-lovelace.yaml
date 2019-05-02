@@ -16,10 +16,9 @@ views:
           - type: light
             name: Livingroom Lamp
             entity: light.tr_livingroom_lamp
-
           - type: light
             name: Bedside Lamp
-            entity: light.tr_bedside_lamp
+            entity: light.tr_bedroom_lamp
 
         # Switches
         - type: entities
@@ -34,7 +33,7 @@ views:
             - entity: switch.tr_dining_room_switch
               icon: mdi:lightbulb
               secondary_info: last-changed
-            - entity: switch.tr_entryway_switch
+            - entity: switch.tr_entryway_kitchen_switch
               icon: mdi:lightbulb
               secondary_info: last-changed
 
