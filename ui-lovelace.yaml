@@ -297,7 +297,7 @@ views:
           cards:
             - type: gauge
               name: Bed Target
-              entity: sensor.ender3_actual_bed_temp
+              entity: sensor.ender3_target_bed_temp
               unit_of_measurement: °C
               min: 0
               max: 150
@@ -309,7 +309,7 @@ views:
 
             - type: gauge
               name: Hot End Target
-              entity: sensor.ender3_actual_tool0_temp
+              entity: sensor.ender3_target_tool0_temp
               unit_of_measurement: °C
               min: 0
               max: 260
