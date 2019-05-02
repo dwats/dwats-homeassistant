@@ -5,29 +5,42 @@
         - zha
         - light
         - switch
-    
+
     entity_config:
-      switch.tr_kitchen_switch:
-        name: Kitchen Counter Light Switch
+
+      # Switches
+      switch.tr_kitchen_range_switch:
+        name: Kitchen Range Light Switch
         aliases:
+          - range light
           - counter light
-          - kitchen light
         room: kitchen
-      switch.tr_entryway_switch:
-        name: Entryway Light Switch
+      switch.tr_kitchen_sink_switch:
+        name: Kitchen Sink Light Switch
+        aliases:
+          - sink light
+          - island light
+        room: kitchen
+      switch.tr_entryway_kitchen_switch:
+        name: Entryway Light (in Kitchen) Switch
         aliases:
           - entryway light
           - door light
-        room: entryway
+        room: kitchen
+      switch.tr_dining_room_switch:
+        name: Dining Room Switch
+        room: dining room
+
+      # lights
       light.tr_livingroom_lamp:
         name: Livingroom Lamp
         aliases:
           - couch lamp
           - livingroom lamp
         room: livingroom
-      light.tr_bedside_lamp:
-        name: Bedside Lamp
+      light.tr_bedroom_lamp:
+        name: Bedroom Lamp
         aliases:
-          - bedroom lamp
+          - bedside lamp
           - bedroom light
         room: master bedroom
