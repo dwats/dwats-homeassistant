@@ -235,12 +235,12 @@ views:
       # Printer Controls/Camera
       - type: picture-glance
         title: Creality Ender 3
-        camera_image: camera.ender3
+        camera_image: camera.ender_3
 
       - type: horizontal-stack
         cards:
           - type: gauge
-            title: Bed Temp
+            name: Bed Temp
             entity: sensor.ender3_actual_bed_temp
             unit_of_measurement: °C
             min: 0
@@ -251,7 +251,7 @@ views:
               green: 60
             #scale: '50px'
           - type: gauge
-            title: Hot End Temp
+            name: Hot End Temp
             entity: sensor.ender3_actual_tool0_temp
             unit_of_measurement: °C
             min: 0
@@ -265,7 +265,7 @@ views:
       - type: horizontal-stack
         cards:
           - type: gauge
-            title: Bed Target
+            name: Bed Target
             entity: sensor.ender3_actual_bed_temp
             unit_of_measurement: °C
             min: 0
@@ -277,7 +277,7 @@ views:
             #scale: '50px'
 
           - type: gauge
-            title: Hot End Target
+            name: Hot End Target
             entity: sensor.ender3_actual_tool0_temp
             unit_of_measurement: °C
             min: 0
