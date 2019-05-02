@@ -18,9 +18,6 @@ known_devices.yaml
 pyozw.sqlite 
 ip_bans.yaml
 .cloud
-!*.yaml
-!.gitignore 
-!*.md
-.storage
-.cloud
-.google.token
+.storage/**
+.cloud/**
+.google.token/**
