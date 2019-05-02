@@ -1,9 +1,31 @@
-# Turn off lights when everybody leaves the house
-  - alias: 'Rule 2 - Away Mode'
-    trigger:
-      platform: state
-      entity_id: group.all_devices
-      to: 'not_home'
-    action:
-      service: light.turn_off
-      entity_id: group.all_lights
+- alias: Rule 2 - Away Mode
+  trigger:
+    platform: state
+    entity_id: group.all_devices
+    to: not_home
+  action:
+    service: light.turn_off
+    entity_id: group.all_lights
+  id: fcbe6762846e4cbf8c05c087cbd54c4e
+- id: '1556772969309'
+  alias: 3d Print Complete
+  trigger:
+  - entity_id: sensor.ender3_current_state
+    from: Printing
+    platform: state
+    to: Operational
+  condition:
+  - after: '10:00'
+    before: '23:30'
+    condition: time
+  action:
+  - data:
+      entity_id: media_player.kitchen_display
+      language: en-us
+      message: Your 3D print is complete.
+    service: tts.google_translate_say
+  - data:
+      entity_id: media_player.office_speaker
+      language: en-us
+      message: Your 3D print is complete.
+    service: tts.google_translate_say
