@@ -235,7 +235,7 @@ views:
       # Printer Controls/Camera
       - type: picture-glance
         title: Creality Ender 3
-        camera_image: camera.ender_3
+        camera_image: camera.ender3
 
       - type: horizontal-stack
         cards:
