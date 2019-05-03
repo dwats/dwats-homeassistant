@@ -29,3 +29,20 @@
       language: en-us
       message: Your 3D print is complete.
     service: tts.google_translate_say
+- id: '1556852919001'
+  alias: 'Sunset: Turn On Lamps'
+  trigger:
+  - below: '-2'
+    entity_id: sun.sun
+    platform: numeric_state
+  condition:
+  - after: '15:00'
+    before: '23:30'
+    condition: time
+  action:
+  - data:
+      brightness: 50
+      entity_id:
+      - light.tr_livingroom_lamp
+      - light.tr_bedroom_lamp
+    service: light.turn_on
