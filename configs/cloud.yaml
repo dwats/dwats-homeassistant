@@ -9,38 +9,62 @@
     entity_config:
 
       # Switches
+      # Kitchen
       switch.tr_kitchen_range_switch:
-        name: Kitchen Range Light Switch
+        name: Counter Light
         aliases:
-          - range light
-          - counter light
+          - Range Light
+          - Fridge Light
+          - Cabinet Light
         room: kitchen
+
       switch.tr_kitchen_sink_switch:
-        name: Kitchen Sink Light Switch
+        name: Sink Light
         aliases:
-          - sink light
-          - island light
+          - Island Light
         room: kitchen
+
+      # Entryway
       switch.tr_entryway_kitchen_switch:
-        name: Entryway Light (in Kitchen) Switch
+        name: Entryway Light
         aliases:
-          - entryway light
-          - door light
-        room: kitchen
+          - Door Light
+        room: entryway
+
+      # Dining Room
       switch.tr_dining_room_switch:
-        name: Dining Room Switch
+        name: Dining Room Light
         room: dining room
+          - Pantry Light
 
       # lights
+      # Living Room
       light.tr_livingroom_lamp:
-        name: Livingroom Lamp
+        name: Couch Table Light
+        aliases:
+          - end table light
+          - end table lamp
+          - table lamp
+          - table light
+        room: livingroom
+
+      light.cree_livingroom_lamp:
+        name: Couch Light
         aliases:
           - couch lamp
-          - livingroom lamp
+          - couch floor lamp
         room: livingroom
+
+      # Master Bedroom
       light.tr_bedroom_lamp:
-        name: Bedroom Lamp
+        name: Nightstand Light
         aliases:
           - bedside lamp
-          - bedroom light
+          - nightstand lamp
+        room: master bedroom
+
+      light.tr_bedroom_lamp:
+        name: Bedroom Light
+        aliases:
+          - bedroom lamp
         room: master bedroom
