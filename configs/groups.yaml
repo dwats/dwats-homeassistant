@@ -1,0 +1,19 @@
+  kitchen_lights:
+    name: All of the Kitchen Lights
+    entities:
+      - switch.tr_kitchen_range_switch
+      - switch.tr_kitchen_sink_switch
+      - switch.tr_dining_room_switch
+
+  livingroom_lights:
+    name: All of the Living Room Lights
+    entities:
+      - switch.tr_livingroom_switch
+      - light.tr_livingroom_lamp
+      - light.cree_livingroom_lamp
+
+  bedroom_lights:
+    name: All of the Bedroom Lights
+    entities:
+      - light.tr_bedroom_lamp
+      - light.cree_bedroom_lamp
