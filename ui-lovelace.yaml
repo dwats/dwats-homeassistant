@@ -10,67 +10,84 @@ views:
 
       - type: horizontal-stack
         cards:
-        - type: history-graph
-          hours_to_show: 12
-          refresh_interval: 300
-          title: Apartment Temperatures
-          entities:
-            - entity: sensor.samjin_btn_1_temp
-              name: Office
-            - entity: sensor.samjin_btn_2_temp
-              name: Kitchen
-            - entity: sensor.samjin_btn_3_temp
-              name: Bedroom
-            - entity: sensor.samjin_btn_4_temp
-              name: Living Room
+          - type: sensor
+            hours_to_show: 3
+            graph: line
+            detail: 2 # 6 points per hour
+            entity: sensor.samjin_btn_1_temp
+            name: Office
+          - type: sensor
+            hours_to_show: 3
+            graph: line
+            detail: 2
+            entity: sensor.samjin_btn_2_temp
+            name: Kitchen
+          - type: sensor
+            hours_to_show: 3
+            graph: line
+            detail: 2
+            entity: sensor.samjin_btn_3_temp
+            name: Bedroom
+          - type: sensor
+            hours_to_show: 3
+            graph: line
+            detail: 2
+            entity: sensor.samjin_btn_4_temp
+            name: Living Room
 
-        # Switches
-        - type: entities
-          title: Switches
-          entities:
-            - entity: light.cree_livingroom_lamp
-              icon: mdi:lightbulb
-              secondary_info: last-changed
-            - entity: light.tr_livingroom_lamp
-              icon: mdi:lightbulb
-              secondary_info: last-changed
-            - entity: light.tr_bedroom_lamp
-              icon: mdi:lightbulb
-              secondary_info: last-changed
-            - entity: light.cree_bedroom_lamp
-              icon: mdi:lightbulb
-              secondary_info: last-changed
-            - entity: switch.tr_kitchen_range_switch
-              icon: mdi:lightbulb
-              secondary_info: last-changed
-            - entity: switch.tr_kitchen_sink_switch
-              icon: mdi:lightbulb
-              secondary_info: last-changed
-            - entity: switch.tr_dining_room_switch
-              icon: mdi:lightbulb
-              secondary_info: last-changed
-            - entity: switch.tr_livingroom_switch
-              icon: mdi:lightbulb
-              secondary_info: last-changed
 
-        # Presense
-        - type: entities
-          title: Family
-          show_header_toggle: false
-          entities:
-            - entity: person.eric
-              secondary_info: last-changed
-            - entity: person.heath
-              secondary_info: last-changed
+      - type: history-graph
+        hours_to_show: 24
+        refresh_interval: 300
+        title: Apartment Temperatures
+        entities:
+          - entity: sensor.samjin_btn_1_temp
+            name: Office
+          - entity: sensor.samjin_btn_2_temp
+            name: Kitchen
+          - entity: sensor.samjin_btn_3_temp
+            name: Bedroom
+          - entity: sensor.samjin_btn_4_temp
+            name: Living Room
 
-#      - type: gauge
-#        id: cpu-gauge
-#        entity: sensor.processor_use
-#        title: CPU
-#        severity:
-#          green: 0
-#          yellow: 50
-#          red: 85
+      # Switches
+      - type: entities
+        title: Switches
+        entities:
+          - entity: light.cree_livingroom_lamp
+            icon: mdi:lightbulb
+            secondary_info: last-changed
+          - entity: light.tr_livingroom_lamp
+            icon: mdi:lightbulb
+            secondary_info: last-changed
+          - entity: light.tr_bedroom_lamp
+            icon: mdi:lightbulb
+            secondary_info: last-changed
+          - entity: light.cree_bedroom_lamp
+            icon: mdi:lightbulb
+            secondary_info: last-changed
+          - entity: switch.tr_kitchen_range_switch
+            icon: mdi:lightbulb
+            secondary_info: last-changed
+          - entity: switch.tr_kitchen_sink_switch
+            icon: mdi:lightbulb
+            secondary_info: last-changed
+          - entity: switch.tr_dining_room_switch
+            icon: mdi:lightbulb
+            secondary_info: last-changed
+          - entity: switch.tr_livingroom_switch
+            icon: mdi:lightbulb
+            secondary_info: last-changed
+
+      # Presense
+      - type: entities
+        title: Family
+        show_header_toggle: false
+        entities:
+          - entity: person.eric
+            secondary_info: last-changed
+          - entity: person.heath
+            secondary_info: last-changed
 
 
   # 3d Printer
