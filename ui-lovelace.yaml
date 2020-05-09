@@ -10,26 +10,36 @@ views:
 
       - type: horizontal-stack
         cards:
-        - type: vertical-stack
-          cards:
-
-          - type: light
-            name: Couch Light
-            entity: light.cree_livingroom_lamp
-          - type: light
-            name: End Table Light
-            entity: light.tr_livingroom_lamp
-          - type: light
-            name: Nightstand Light
-            entity: light.tr_bedroom_lamp
-          - type: light
-            name: Bedroom Light
-            entity: light.cree_bedroom_lamp
+        - type: history-graph
+          hours_to_show: 12
+          refresh_interval: 300
+          title: Apartment Temperatures
+          entities:
+            - entity: sensor.samjin_btn_1_temp
+              name: Office
+            - entity: sensor.samjin_btn_2_temp
+              name: Kitchen
+            - entity: sensor.samjin_btn_3_temp
+              name: Bedroom
+            - entity: sensor.samjin_btn_4_temp
+              name: Living Room
 
         # Switches
         - type: entities
           title: Switches
           entities:
+            - entity: light.cree_livingroom_lamp
+              icon: mdi:lightbulb
+              secondary_info: last-changed
+            - entity: light.tr_livingroom_lamp
+              icon: mdi:lightbulb
+              secondary_info: last-changed
+            - entity: light.tr_bedroom_lamp
+              icon: mdi:lightbulb
+              secondary_info: last-changed
+            - entity: light.cree_bedroom_lamp
+              icon: mdi:lightbulb
+              secondary_info: last-changed
             - entity: switch.tr_kitchen_range_switch
               icon: mdi:lightbulb
               secondary_info: last-changed

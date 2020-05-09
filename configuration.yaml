@@ -22,11 +22,10 @@ group: !include ./configs/groups.yaml
 script: !include scripts.yaml
 sensor: !include ./configs/sensors.yaml
 cloud: !include ./configs/cloud.yaml
-panel_iframe: !include ./configs/panel-iframe.yaml
+# panel_iframe: !include ./configs/panel-iframe.yaml
 device_tracker: !include ./configs/presence-detection.yaml
 tts: !include ./configs/tts.yaml
 zha: !include ./configs/zha.yaml
 octoprint: !include ./configs/octoprint.yaml
 camera: !include ./configs/camera.yaml
-roku: !include ./configs/roku.yaml
 # googlehome: !include ./configs/googlehome.yaml

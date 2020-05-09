@@ -20,11 +20,6 @@
     condition: time
   action:
   - data:
-      entity_id: media_player.kitchen_display
-      language: en-us
-      message: Your 3D print is complete.
-    service: tts.google_translate_say
-  - data:
       entity_id: media_player.office_speaker
       language: en-us
       message: Your 3D print is complete.
@@ -33,7 +28,7 @@
   alias: 'Sunset: Turn On Lamps'
   trigger:
   - event: sunset
-    offset: -00:05:00
+    offset: -00:15:00
     platform: sun
   condition:
   - after: '15:00'
@@ -47,4 +42,190 @@
       - light.tr_bedroom_lamp
       - light.cree_livingroom_lamp
       - light.cree_bedroom_lamp
+      - light.cree_office
     service: light.turn_on
+- id: '1588871460585'
+  alias: Office - Lamp Off
+  trigger:
+  - event_data:
+      command: button_hold
+      device_ieee: 28:6d:97:00:01:0a:26:fb
+    event_type: zha_event
+    platform: event
+  condition: []
+  action:
+  - alias: ''
+    data:
+      entity_id: light.cree_office
+    service: light.turn_off
+- id: '1588872265022'
+  alias: Office - Lamp 25%
+  trigger:
+  - event_data:
+      command: button_single
+      device_ieee: 28:6d:97:00:01:0a:26:fb
+    event_type: zha_event
+    platform: event
+  condition: []
+  action:
+  - data:
+      brightness: 64
+      entity_id: light.cree_office
+    service: light.turn_on
+- id: '1588872375703'
+  alias: Office - Lamp On 100%
+  trigger:
+  - event_data:
+      command: button_double
+      device_ieee: 28:6d:97:00:01:0a:26:fb
+    event_type: zha_event
+    platform: event
+  condition: []
+  action:
+  - data:
+      brightness: 255
+      entity_id: light.cree_office
+    service: light.turn_on
+- id: '1588881635075'
+  alias: Kitchen - Range Lights On
+  trigger:
+  - event_data:
+      command: button_single
+      device_ieee: 28:6d:97:00:01:0a:27:53
+    event_type: zha_event
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: switch.tr_kitchen_range_switch
+    service: switch.turn_on
+- id: '1588881892427'
+  alias: Kitchen - Lights Off
+  trigger:
+  - event_data:
+      command: button_hold
+      device_ieee: 28:6d:97:00:01:0a:27:53
+    event_type: zha_event
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id:
+      - switch.tr_kitchen_sink_switch
+      - switch.tr_kitchen_range_switch
+      - switch.tr_dining_room_switch
+    service: switch.turn_off
+- id: '1588881947395'
+  alias: Kitchen - Lights On
+  trigger:
+  - event_data:
+      command: button_double
+      device_ieee: 28:6d:97:00:01:0a:27:53
+    event_type: zha_event
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id:
+      - switch.tr_kitchen_sink_switch
+      - switch.tr_kitchen_range_switch
+      - switch.tr_dining_room_switch
+    service: switch.turn_on
+- id: '1588882830659'
+  alias: Bedroom - Lamps 25%
+  trigger:
+  - event_data:
+      command: button_single
+      device_ieee: 28:6d:97:00:01:0a:27:5e
+    event_type: zha_event
+    platform: event
+  condition: []
+  action:
+  - data:
+      brightness: 64
+      entity_id:
+      - light.cree_bedroom_lamp
+      - light.tr_bedroom_lamp
+    service: light.turn_on
+- id: '1588883002721'
+  alias: Bedroom - Lamps 100%
+  trigger:
+  - event_data:
+      command: button_double
+      device_ieee: 28:6d:97:00:01:0a:27:5e
+    event_type: zha_event
+    platform: event
+  condition: []
+  action:
+  - data:
+      brightness: 255
+      entity_id:
+      - light.cree_bedroom_lamp
+      - light.tr_bedroom_lamp
+    service: light.turn_on
+- id: '1588883060730'
+  alias: Bedroom - Lamps Off
+  trigger:
+  - event_data:
+      command: button_hold
+      device_ieee: 28:6d:97:00:01:0a:27:5e
+    event_type: zha_event
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id:
+      - light.cree_bedroom_lamp
+      - light.tr_bedroom_lamp
+    service: light.turn_off
+- id: '1589048905755'
+  alias: ' Livingroom - Lamps 25%'
+  trigger:
+  - event_data:
+      command: button_single
+      device_ieee: 28:6d:97:00:01:0a:28:b0
+    event_type: zha_event
+    platform: event
+  condition: []
+  action:
+  - data:
+      brightness: 64
+      entity_id:
+      - light.cree_livingroom_lamp
+      - light.tr_livingroom_lamp
+    service: light.turn_on
+- id: '1589048956644'
+  alias: Livingroom - Lamps 100%
+  trigger:
+  - event_data:
+      command: button_double
+      device_ieee: 28:6d:97:00:01:0a:28:b0
+    event_type: zha_event
+    platform: event
+  condition: []
+  action:
+  - data:
+      brightness: 255
+      entity_id:
+      - light.cree_livingroom_lamp
+      - light.tr_livingroom_lamp
+    service: light.turn_on
+- id: '1589049017958'
+  alias: Livingroom - Lights Off
+  trigger:
+  - event_data:
+      command: button_hold
+      device_ieee: 28:6d:97:00:01:0a:28:b0
+    event_type: zha_event
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id:
+      - light.cree_livingroom_lamp
+      - light.tr_livingroom_lamp
+    service: light.turn_off
+  - data:
+      entity_id:
+      - switch.tr_livingroom_switch
+    service: switch.turn_off
