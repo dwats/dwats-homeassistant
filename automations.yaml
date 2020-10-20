@@ -222,12 +222,6 @@
       service: light.turn_on
     - delay: "1"
     - data:
-        brightness_pct: 100
-        entity_id:
-          - light.cree_office
-        transition: 120
-      service: light.turn_on
-    - data:
         brightness_pct: 50
         entity_id:
           - light.cree_livingroom_lamp
