@@ -237,8 +237,7 @@
       platform: sun
   condition:
     - condition: state
-      entity_id:
-        - light.cree_office
+      entity_id: light.cree_office
       state: "off"
   action:
     - service: light.turn_on
