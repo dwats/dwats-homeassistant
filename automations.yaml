@@ -15,42 +15,6 @@
         language: en-us
         message: Your 3D print is complete.
       service: tts.google_translate_say
-- id: "1556852919001"
-  alias: "Sunset: Turn On Lamps"
-  trigger:
-    - event: sunset
-      platform: sun
-  condition:
-    - after: "15:00"
-      before: "23:30"
-      condition: time
-  action:
-    - data:
-        brightness_pct: 1
-        entity_id:
-          - light.cree_livingroom_lamp
-          - light.tr_livingroom_lamp
-          - light.cree_office
-          - light.tr_bedroom_lamp
-          - light.cree_bedroom_lamp
-        transition: 0
-      service: light.turn_on
-    - delay: "1"
-    - data:
-        brightness_pct: 100
-        entity_id:
-          - light.cree_office
-        transition: 120
-      service: light.turn_on
-    - data:
-        brightness_pct: 50
-        entity_id:
-          - light.cree_livingroom_lamp
-          - light.tr_livingroom_lamp
-          - light.tr_bedroom_lamp
-          - light.cree_bedroom_lamp
-        transition: 900
-      service: light.turn_on
 - id: "1588871460585"
   alias: Office - Lamp Off
   trigger:
@@ -236,16 +200,52 @@
         entity_id:
           - switch.tr_livingroom_switch
       service: switch.turn_off
+- id: "1556852919001"
+  alias: "Sunset: Turn On Lamps"
+  trigger:
+    - event: sunset
+      platform: sun
+  condition:
+    - after: "15:00"
+      before: "23:30"
+      condition: time
+  action:
+    - data:
+        brightness_pct: 1
+        entity_id:
+          - light.cree_livingroom_lamp
+          - light.tr_livingroom_lamp
+          - light.cree_office
+          - light.tr_bedroom_lamp
+          - light.cree_bedroom_lamp
+        transition: 0
+      service: light.turn_on
+    - delay: "1"
+    - data:
+        brightness_pct: 100
+        entity_id:
+          - light.cree_office
+        transition: 120
+      service: light.turn_on
+    - data:
+        brightness_pct: 50
+        entity_id:
+          - light.cree_livingroom_lamp
+          - light.tr_livingroom_lamp
+          - light.tr_bedroom_lamp
+          - light.cree_bedroom_lamp
+        transition: 900
+      service: light.turn_on
 - id: "1603153021756"
   alias: "Sunset: Office Lights"
   trigger:
     - event: sunset
       platform: sun
   condition:
-    condition: state
-    entity_id:
-      - light.cree_office
-    state: "off"
+    - condition: state
+      entity_id:
+        - light.cree_office
+      state: "off"
   action:
     - service: light.turn_on
       data:
