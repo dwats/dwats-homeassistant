@@ -28,7 +28,6 @@
   alias: 'Sunset: Turn On Lamps'
   trigger:
   - event: sunset
-    offset: -00:15:00
     platform: sun
   condition:
   - after: '15:00'
@@ -36,13 +35,30 @@
     condition: time
   action:
   - data:
-      brightness: 50
+      brightness_pct: 1
       entity_id:
+      - light.cree_livingroom_lamp
+      - light.tr_livingroom_lamp
+      - light.cree_office
+      - light.tr_bedroom_lamp
+      - light.cree_bedroom_lamp
+      transition: 0
+    service: light.turn_on
+  - delay: '1'
+  - data:
+      brightness_pct: 100
+      entity_id:
+      - light.cree_office
+      transition: 120
+    service: light.turn_on
+  - data:
+      brightness_pct: 50
+      entity_id:
+      - light.cree_livingroom_lamp
       - light.tr_livingroom_lamp
       - light.tr_bedroom_lamp
-      - light.cree_livingroom_lamp
       - light.cree_bedroom_lamp
-      - light.cree_office
+      transition: 900
     service: light.turn_on
 - id: '1588871460585'
   alias: Office - Lamp Off
@@ -229,3 +245,27 @@
       entity_id:
       - switch.tr_livingroom_switch
     service: switch.turn_off
+  - id: "1603153021756"
+    alias: "Sunset: Office Lights"
+    trigger:
+      - event: sunset
+        platform: sun
+    condition:
+      condition: state
+      entity_id:
+        - light.cree_office
+      state: "off"
+    action:
+      - service: light.turn_on
+        data:
+          brightness_pct: 1
+          entity_id:
+            - light.cree_office
+          transition: 0
+      - delay: "1"
+      - service: light.turn_on
+        data:
+          brightness_pct: 100
+          transition: 120
+          entity_id:
+            - light.cree_office
